@@ -23,21 +23,13 @@
 
 </html>
 
-<?php 
-    if($_SERVER('REQUEST_METHOD')==='POST'){
-        
-            // e.preventDefault();
-
-            $name=$_POST['name'];
-            $email=$_POST['email'];
-            $password=$_POST['password'];
-
-            
-            
-    
+<?php
+if ($_SERVER('REQUEST_METHOD') === 'POST') {
+    if (isset($_POST['submit'])) {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
     }
-
-    
-
+}
 ?>
