@@ -12,7 +12,6 @@ header {
     padding: 10px 0;
 }
 
-
 .nav_bar {
     display:flex;
     justify-content: space-between;
@@ -72,6 +71,7 @@ section {
 
 #home p{
     font-size:20px;
+    Font-family: Copperplate, Copperplate Gothic Light, fantasy;
 }
 
 /* #home span img{
