@@ -17,7 +17,7 @@
         <label for="message">Message:</label>
         <textarea id="message" name="message" required></textarea>
 
-        <button type="submit">Submit</button>
+        <button type="submit">Submit</button>   
     </form>
 </body>
 
@@ -28,8 +28,17 @@ if ($_SERVER('REQUEST_METHOD') === 'POST') {
     if (isset($_POST['submit'])) {
         $name = $_POST['name'];
         $email = $_POST['email'];
-        $password = $_POST['password'];
+        $message = $_POST['$message'];
 
+        $data = "Name : $name\nEmail: $email\nMessage: $message\n";
+
+        $file = fopen("contacts.txt","a");
+        fwrite($file, $data);
+        fclose($file);
+
+        echo "Form Submitted Successfully";
     }
 }
+
+
 ?>

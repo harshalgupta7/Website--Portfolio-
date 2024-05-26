@@ -1,3 +1,15 @@
+<?php
+
+
+// files for mail smtp service 
+require '\PHPMailer-master\src\Exception.php';
+require '\PHPMailer-master\src\PHPMailer.php';
+require '\PHPMailer-master\src\SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <?php header("Cache-Control: no-cache, must-revalidate"); ?>
@@ -57,3 +69,20 @@
 </body>
 
 </html>
+
+<!-- ----------------------------------------Mail script------------------------------>
+<?PHP 
+// if($_SERVER['REQUEST_METHOD'] === 'POST'){
+//     if(isset($_POST['submit'])){
+//         $name = $_POST['name'];
+//         $email = $_POST['email'];
+//         $message = $_POST['$message'];
+
+//         $mail = new PHPMailer(true);
+//         try {
+            
+//         }
+//     }
+// }
+?>
+
