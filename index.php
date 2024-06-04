@@ -1,17 +1,23 @@
 <?php
 
-
 // files for mail smtp service 
-require '\PHPMailer-master\src\Exception.php';
-require '\PHPMailer-master\src\PHPMailer.php';
-require '\PHPMailer-master\src\SMTP.php';
+require "D:\lampp\htdocs\Website template\PHPMailer-master\PHPMailer-master\src\PHPMailer.php";
+require "D:\lampp\htdocs\Website template\PHPMailer-master\PHPMailer-master\src\Exception.php";
+require "D:\lampp\htdocs\Website template\PHPMailer-master\PHPMailer-master\src\SMTP.php";
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+
+// enabling error reporting
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+<!-- This is required for intant refresh of the website -->
 <?php header("Cache-Control: no-cache, must-revalidate"); ?>
 
 <head>
@@ -36,12 +42,13 @@ use PHPMailer\PHPMailer\Exception;
 
     <main>
         <section id="home">
-            <div><h1>Hello <> <br>
-            I'm Harshal </h1>
-            <p>I'm a Backend Software Engineer</p>
+            <div>
+                <h1>Hello <> <br>
+                        I'm Harshal </h1>
+                <p>I'm a Backend Software Engineer</p>
             </div>
             <div>
-            <span><img src="character.png"> </span>
+                <span><img src="character.png"> </span>
             </div>
         </section>
 
@@ -71,18 +78,17 @@ use PHPMailer\PHPMailer\Exception;
 </html>
 
 <!-- ----------------------------------------Mail script------------------------------>
-<?PHP 
-// if($_SERVER['REQUEST_METHOD'] === 'POST'){
-//     if(isset($_POST['submit'])){
+<?PHP
+// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//     if (isset($_POST['submit'])) {
 //         $name = $_POST['name'];
 //         $email = $_POST['email'];
 //         $message = $_POST['$message'];
 
 //         $mail = new PHPMailer(true);
 //         try {
-            
+
 //         }
 //     }
 // }
 ?>
-
