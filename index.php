@@ -79,16 +79,40 @@ error_reporting(E_ALL);
 
 <!-- ----------------------------------------Mail script------------------------------>
 <?PHP
-// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-//     if (isset($_POST['submit'])) {
-//         $name = $_POST['name'];
-//         $email = $_POST['email'];
-//         $message = $_POST['$message'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['submit'])) {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $message = $_POST['$message'];
 
-//         $mail = new PHPMailer(true);
-//         try {
+        $mail = new PHPMailer(true);
+        try {
+            // sender api config
+            // ID - 278217281275-pm36p5ctinmldt32stu6op9dibadgjea.apps.googleusercontent.com
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'example@gmail.com';
+            $mail->Password = 'example';
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 587;
 
-//         }
-//     }
-// }
+            // receiver mail and id
+            $mail->setFrom('youremail@gmail.com', 'your name');
+            $mail->addAddress('receipent@gmail.com', 'recipient name');
+
+            //content\
+            $mail->isHTML(true);
+            $mail->Subject = 'Confirmation';
+            $mail->Body = 'this is body';
+            $mail->AltBody = ' this is for non html clients';
+
+            $mail->send();
+        } catch (Exception $e) {
+            echo 'message cannnot be sent' . $e->getMessage();
+        }
+    }
+}
+
+
 ?>
