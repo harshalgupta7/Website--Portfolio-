@@ -1,6 +1,7 @@
 <?php
 
-// files for mail smtp service 
+include 'config.php';
+// files for mail smtp service
 require "D:\lampp\htdocs\Website template\PHPMailer-master\PHPMailer-master\src\PHPMailer.php";
 require "D:\lampp\htdocs\Website template\PHPMailer-master\PHPMailer-master\src\Exception.php";
 require "D:\lampp\htdocs\Website template\PHPMailer-master\PHPMailer-master\src\SMTP.php";
@@ -12,7 +13,6 @@ use PHPMailer\PHPMailer\Exception;
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ error_reporting(E_ALL);
         <div class="nav_bar">
             <div></div>
             <div class="menu">
-                <a href="about.php" class="menu-item">About Me</a>
+                <a href="<?php echo $ROOT_URL . 'about.php'; ?>" class="menu-item">About Me</a>
                 <a href="projects.php" class="menu-item">Projects</a>
                 <a href="resume.php" class="menu-item">Resume</a>
                 <a href="contact.php" class="menu-item">Contact</a>
@@ -114,5 +114,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-
+    // user authentication set up
+    
 ?>
